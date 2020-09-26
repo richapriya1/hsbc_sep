@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function validate(){
+	var v1=document.getElementById("n1").value;
+	var v2=document.getElementById("n2").value;
+	var v3=document.getElementById("n3").value;
+	var v4=document.getElementById("n4").value;
+	if(v4.length<4||v4.length>8){
+		alert("Password should have minimum length 4 and maximum length 8")
+	}
+}
+</script>
+
+<body>
+<center>
+<form action="AssignmentServlet" method="">
+Name : <input type=text name=name id="n1" class="nn" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"> <br>
+Email : <input type=email name=email id="n2" required> <br>
+Phone : <input type=text name=phone id="n3"required pattern="[\+]\d{2}[\-]\d{10}"> <br>
+Password : <input type=password name=password id="n4" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"> <br>
+Country : <select name="country">
+  <option value="india">India</option>
+  <option value="canada">Canada</option>
+</select>
+
+<div id="result"></div>
+		
+		<input type=submit value=Register id=bb onclick="validate()"> <br>
+</form>
+</center>
+</body>
+</html>
